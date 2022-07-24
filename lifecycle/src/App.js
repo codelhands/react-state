@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import {useState} from "react";
 
 function App() {
+
+  // if(true){
+  //   console.lof("selam");
+
+  //   const [number,setNumber] = useState(0); 
+
+  //   hook yapısı (const yapısı) kullanırken if bloklarının içinde kullanmamak gerekli 
+  // }
+
+  const [number,setNumber] = useState(0);
+  const [name,setName] = useState(0);
+
+  useEffect(() => {
+    console.log('state güncellendi');
+  });
+
+
+  useEffect(() => {
+    console.log('number state güncellendi, component mount edildi');
+  }, [number]); // bu array sayesinde mount edildiği anı yakalarsın
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{number}</h1>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+
+
+      <hr></hr>
+
+      <h1>{name}</h1>
+      <button onClick={() => setName("mete")}>Click</button>
+
+
+
+
+
     </div>
   );
 }
