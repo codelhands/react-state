@@ -18,7 +18,7 @@ function List({contacts}) {
     <input placeholder="Filter contact" value={filterText} onChange={(e)=> setFilterText(e.target.value)}/>
 
 
-    <ul>
+    <ul className='list'>
     {
       filtered.map((contact,i)=> ( <li key={i}>{contact.full_name}</li>))
     }
