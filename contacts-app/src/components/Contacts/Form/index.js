@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react'
 
 function Form({addContact,contacts}) {
 
-  const initialFormValues = {fullname:"",phone_number:""};
+  const initialFormValues = {full_name:"",phone_number:""};
 
   useEffect(()=> {
     setForm(initialFormValues); //input girip add yaptıktan sonra inputu boşlamak için
@@ -18,7 +18,7 @@ function Form({addContact,contacts}) {
   const onSubmit = (e) => {
     e.preventDefault(); //sayfa yenilenmeden ilgi logu consolda görmek için
     
-    if(form.fullname === '' || form.phone_number === ''){
+    if(form.full_name === '' || form.phone_number === ''){
       return false;
     }
 
@@ -32,9 +32,9 @@ function Form({addContact,contacts}) {
     <form onSubmit={onSubmit}>
         <div>
     <input
-     name="fullname" 
+     name="full_name" 
      placeholder='Full Name' 
-     value={form.fullname}
+     value={form.full_name}
      onChange={onChangeInput}
      />
         </div>
