@@ -8,7 +8,13 @@ function Header() {
     const {theme, setTheme} = useContext(ThemeContext);
 
 
-  return <div>Active Theme : {theme}</div>
+  return <div>
+  Active Theme : {theme}
+  
+  <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>Change Theme</button>
+
+
+  </div>
 }
 
 export default Header
