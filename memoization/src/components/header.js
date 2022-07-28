@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Header() {
+function Header({number}) {
+    console.log("header render edildi");
   return (
-    <div>Header</div>
+    <div>Header-{number}</div>
   )
 }
 
