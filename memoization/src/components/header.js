@@ -1,15 +1,15 @@
 import React from 'react'
 
-function Header({number,data}) { //
+function Header({number,increment}) { //
     console.log("header render edildi");
   return (
-    <div>
+    <div> 
     
     Header-{number}
     <br></br>
     <br></br>
 
-    <code>{JSON.stringify(data)}</code>
+    <button onClick={(increment)}></button>
     
     </div>
   )
