@@ -1,10 +1,13 @@
+import { useContext } from 'react'
+
+
 import React from 'react'
 import Button from './Button'
 import Header from './Header'
 
 
 import ThemeContext from '../context/ThemeContext'
-import { useContext } from 'react'
+import Profile from './Profile'
 
 function Container() {
 
@@ -20,6 +23,10 @@ function Container() {
     <hr></hr>
 
     <Button></Button>
+
+    <hr></hr>
+
+    <Profile></Profile>
     
     </div>
   );

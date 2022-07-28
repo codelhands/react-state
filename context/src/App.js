@@ -1,15 +1,19 @@
+
 import './App.css';
-import Button from './components/Button';
-import Header from './components/Header';
 import Container from './components/Container';
+
 import {ThemeProvider} from './context/ThemeContext';
+import {UserProvider} from './context/UserContext';
 
 
 function App() {
   return (
     <ThemeProvider >
-    <Container></Container>
-  </ThemeProvider>);
+    <UserProvider>
+    <Container/>
+    </UserProvider>
+  </ThemeProvider>
+  );
 }
 
 export default App;
