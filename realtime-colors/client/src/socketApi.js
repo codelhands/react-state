@@ -14,4 +14,13 @@ export const init = () => {
     });
 
     socket.on('connect', () => console.log("sunucuya bağlantı gerçekleşti"))
+
+    
+
+
+}
+
+export const send = (color) => {
+    //clientten backende , backendden cliente veri göndermeye yarayan kod
+    socket.emit('newColor',color);
 }
