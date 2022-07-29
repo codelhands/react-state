@@ -1,21 +1,26 @@
 import './App.css'; 
 
-import { init } from './socketApi';
+import { init,subscribe } from './socketApi';
 
-import { useEffect } from 'react';
+import { useEffect,useState} from 'react';
 
 import Palatte from './components/Palatte';
 
 function App() {
 
+  const [activeColor,setActiveColor] = useState("#282c34") 
+
   useEffect(() => {
     init();
+    subscribe((color) => {
+      setActiveColor(color);
+    });
   },[]);
 
 
   return (
-    <div className="App">
-     <Palatte></Palatte>
+    <div className="App" style={{backgroundColor : activeColor}}>
+     <Palatte activeColor={activeColor}></Palatte>
     </div>
   );
 }
