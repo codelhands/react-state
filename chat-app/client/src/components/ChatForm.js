@@ -1,14 +1,24 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from "./styles.module.css"
+import {sendMessage} from "../socketApi"
+import {useChat} from "../context/ChatContext"
 
 function ChatForm() {
 
-  const [message,setMessages] = useState("");
+  const [message,setMessage] = useState("");
+
+
+  const {setMessages} = useChat();
+
 
   const handleSubmit = (e) => {
     e.preventDefault(); // mesaj yazdıkça sayfa yenilenmesin kodu 
     console.log(message);
+
+    setMessages((prevState) => [...prevState],{message});
+
+    sendMessage(message);
 
     setMessages(""); //mesaj kutusu boşalsın diye
   };
@@ -17,7 +27,7 @@ function ChatForm() {
     <div>
     
     <form onSubmit={handleSubmit}>
-      <input className={styles.textInput} value={message} onChange={(e) => setMessages(e.target.value)}/>
+      <input className={styles.textInput} value={message} onChange={(e) => setMessage(e.target.value)}/>
     </form>
 
     </div>
